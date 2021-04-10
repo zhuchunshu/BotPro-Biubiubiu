@@ -1,0 +1,23 @@
+{
+    "name" : "Biubiubiu",
+    "description" : "Biubiubiu发射!",
+    "class" : [
+        "BootController"
+    ],
+    "author" : "作者",
+    "url" : "插件官网链接",
+    "version" : "插件版本",
+    "post_type" : {
+        "message" : {
+            "group" : [
+                "GroupMessageController"
+            ],
+            "private" : [
+                "PrivatesMessageController"
+            ]
+        },
+        "notice" : {
+            
+        }
+    }
+}

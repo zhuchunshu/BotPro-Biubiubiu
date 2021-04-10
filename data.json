@@ -4,9 +4,9 @@
     "class" : [
         "BootController"
     ],
-    "author" : "作者",
-    "url" : "插件官网链接",
-    "version" : "插件版本",
+    "author" : "Inkedus",
+    "url" : "http://node.tax",
+    "version" : "1.0",
     "post_type" : {
         "message" : {
             "group" : [

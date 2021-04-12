@@ -29,6 +29,10 @@ class BootController {
             Route::get('keywords', [BiubiubiuCiController::class,'index']); // 关键词
             Route::post('keywords', [BiubiubiuCiController::class,'store']); // 关键词
             Route::get('keywords/create', [BiubiubiuCiController::class,'create']); // 关键词
+            Route::get('keywords/{id}/edit', [BiubiubiuCiController::class,'edit']); // 编辑
+            Route::get('keywords/{id}', [BiubiubiuCiController::class,'show']); // 查看
+            Route::delete('keywords/{id}', [BiubiubiuCiController::class,'destroy']); // 删除
+            Route::put('/keywords/{id}', [BiubiubiuCiController::class,'update']); //更新
         });
     }
 

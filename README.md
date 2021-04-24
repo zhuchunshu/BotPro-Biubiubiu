@@ -6,6 +6,7 @@ Biubiubiu是一款免费的BotPro插件，并且长期维护更新
 2. 群关键词模糊回复
 3. 私聊关键词精确回复
 4. 私聊关键词模糊回复
+5. 通过发消息教机器人学习
 ## 插件地址
 [https://github.com/BotPro-Plugins/Biubiubiu.git](https://github.com/BotPro-Plugins/Biubiubiu.git)
 ## 安装方法

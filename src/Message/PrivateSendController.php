@@ -1,10 +1,10 @@
 <?php
-namespace App\Plugins\Biubiubiu\src;
+namespace App\Plugins\Biubiubiu\src\Message;
 
 use Illuminate\Support\Str;
 use App\Plugins\Biubiubiu\src\Models\BiubiubiuCi;
 
-class PrivatesMessageController {
+class PrivateSendController {
     /**
      * 接收到的数据
      *

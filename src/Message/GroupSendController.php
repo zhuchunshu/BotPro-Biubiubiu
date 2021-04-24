@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Plugins\Biubiubiu\src;
+namespace App\Plugins\Biubiubiu\src\Message;
 
 use Illuminate\Support\Str;
 use App\Plugins\Biubiubiu\src\Models\BiubiubiuCi;
 
-class GroupMessageController
+class GroupSendController
 {
 
     /**
@@ -40,12 +40,20 @@ class GroupMessageController
     // 精确回复
     public function jingque(){
         if(get_options("Biubiubiu_Switch_Group_exact")){
+            $at = get_options('Biubiubiu_Switch_ReAt');
             $get = BiubiubiuCi::where(['order' => $this->data->message,'type' => 'exact','class' => "group"])->get();
             foreach ($get as $value) {
-                sendMsg([
-                    'group_id' => $this->data->group_id,
-                    'message' => "[CQ:at,qq={$this->data->user_id}]{$value->content}"
-                ], "send_group_msg");
+                if($at){
+                    sendMsg([
+                        'group_id' => $this->data->group_id,
+                        'message' => "[CQ:at,qq={$this->data->user_id}]{$value->content}"
+                    ], "send_group_msg");
+                }else{
+                    sendMsg([
+                        'group_id' => $this->data->group_id,
+                        'message' => $value->content
+                    ], "send_group_msg");
+                }
             }
         }
     }
@@ -53,14 +61,22 @@ class GroupMessageController
     // 模糊回复
     public function mohu(){
         if(get_options("Biubiubiu_Switch_Group_blurry")){
+            $at = get_options('Biubiubiu_Switch_ReAt');
             $get = BiubiubiuCi::where(['type' => 'blurry','class' => "group"])->get();
             foreach ($get as $value) {
                 $contains = Str::of($this->data->message)->contains($value->order);
                 if($contains){
-                    sendMsg([
-                        'group_id' => $this->data->group_id,
-                        'message' => "[CQ:at,qq={$this->data->user_id}]{$value->content}"
-                    ], "send_group_msg");
+                    if($at){
+                        sendMsg([
+                            'group_id' => $this->data->group_id,
+                            'message' => "[CQ:at,qq={$this->data->user_id}]{$value->content}"
+                        ], "send_group_msg");
+                    }else{
+                        sendMsg([
+                            'group_id' => $this->data->group_id,
+                            'message' => $value->content
+                        ], "send_group_msg");
+                    }
                 }
             }
         }

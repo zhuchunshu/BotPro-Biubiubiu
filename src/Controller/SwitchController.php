@@ -66,6 +66,36 @@ class SwitchController {
                 "name" => "私聊模糊回复",
                 'status' => get_options("Biubiubiu_Switch_Private_blurry"),
             ],
+            [
+                "id" => "Biubiubiu_Switch_Group_study_admin",
+                "name" => "群内学习(大于等于管理员权限)",
+                'status' => get_options("Biubiubiu_Switch_Group_study_admin"),
+            ],
+            [
+                "id" => "Biubiubiu_Switch_Group_study_owner",
+                "name" => "群内学习(群主权限)",
+                'status' => get_options("Biubiubiu_Switch_Group_study_owner"),
+            ],
+            [
+                "id" => "Biubiubiu_Switch_Group_study_zhuren",
+                "name" => "群内学习(主人权限)",
+                'status' => get_options("Biubiubiu_Switch_Group_study_zhuren"),
+            ],
+            [
+                "id" => "Biubiubiu_Switch_Group_study_mumber",
+                "name" => "群内学习(所有人权限)",
+                'status' => get_options("Biubiubiu_Switch_Group_study_mumber"),
+            ],
+            [
+                "id" => "Biubiubiu_Switch_Private_study_zhuren",
+                "name" => "私聊学习(主人权限)",
+                'status' => get_options("Biubiubiu_Switch_Private_study_zhuren"),
+            ],
+            [
+                "id" => "Biubiubiu_Switch_ReAt",
+                "name" => "回复时艾特",
+                'status' => get_options("Biubiubiu_Switch_ReAt"),
+            ],
         ];
         return $data;
     }

@@ -5,6 +5,7 @@ namespace App\Plugins\Biubiubiu\src\Controller;
 use Dcat\Admin\Form;
 use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
+use Illuminate\Support\Str;
 use Dcat\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use App\Plugins\Biubiubiu\src\Repositories\BiubiubiuCi;
@@ -21,7 +22,9 @@ class BiubiubiuCiController extends Controller
         return Grid::make(new BiubiubiuCi(), function (Grid $grid) {
             $grid->column('id')->sortable();
             $grid->column('order','收到内容');
-            $grid->column('content','回复内容');
+            $grid->column('content','回复内容')->display(function($content){
+                return Str::limit($content, 80, '...');
+            });
             $grid->column('type','类型');
             $grid->column('class','分类');
         

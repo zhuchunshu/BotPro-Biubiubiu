@@ -31,6 +31,7 @@ class SwitchController {
             $grid->disableRowSelector();
             //$grid->disableCreateButton();
             $grid->disableActions();
+            $grid->disableCreateButton();
             $grid->disableBatchDelete();
             $grid->disablePagination();
             $grid->model()->setData($this->generate());
@@ -95,6 +96,11 @@ class SwitchController {
                 "id" => "Biubiubiu_Switch_ReAt",
                 "name" => "回复时艾特",
                 'status' => get_options("Biubiubiu_Switch_ReAt"),
+            ],
+            [
+                "id" => "Biubiubiu_Switch_Study_f",
+                "name" => "禁止重复学习同一指令",
+                'status' => get_options("Biubiubiu_Switch_Study_f"),
             ],
         ];
         return $data;
